@@ -1,0 +1,444 @@
+/* ─────────────────────────────────────────────────────────────────────────────
+   SV Angel · Inner Pages Design System
+   Inspired by Wise design language — adapted to SV Angel dark/gold palette
+───────────────────────────────────────────────────────────────────────────── */
+
+:root {
+    --sva-gold: #a58517;
+    --sva-gold-hover: #c9a526;
+    --sva-gold-pale: #f5eed5;
+    --sva-ink: #111111;
+    --sva-canvas: #ffffff;
+    --sva-canvas-soft: #f7f5f0;
+    --sva-dark: #181818;
+    --sva-body: #444444;
+    --sva-mute: #888888;
+    --sva-border: #e8e4dc;
+    --sva-r-card: 24px;
+    --sva-r-btn: 9999px;
+    --sva-r-img: 16px;
+}
+
+/* ── Sections ──────────────────────────────────────────────────────────────── */
+.sva-section {
+    padding: 100px 0;
+    background: var(--sva-canvas);
+}
+.sva-section--soft {
+    background: var(--sva-canvas-soft);
+}
+.sva-section--dark {
+    background: var(--sva-dark);
+    color: #fff;
+}
+.sva-page-hero {
+    background: #0e0f0c;
+    color: #fff;
+    padding: 150px 0 90px;
+}
+
+/* ── Typography ────────────────────────────────────────────────────────────── */
+.sva-eyebrow {
+    display: block;
+    color: var(--sva-gold);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+.sva-h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.05;
+    margin-bottom: 24px;
+}
+.sva-h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+.sva-lead {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--sva-body);
+}
+.sva-lead--light {
+    color: rgba(255, 255, 255, 0.75);
+}
+.sva-lead--narrow {
+    max-width: 640px;
+}
+.sva-page-title {
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1.05;
+    margin-bottom: 32px;
+}
+
+/* ── Buttons ───────────────────────────────────────────────────────────────── */
+.sva-btn {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    padding: 14px 30px;
+    border: none;
+    cursor: pointer;
+    transition:
+        background 0.2s,
+        color 0.2s,
+        border-color 0.2s;
+    line-height: 1;
+    white-space: nowrap;
+}
+.sva-btn--gold {
+    background: var(--sva-gold);
+    color: #fff !important;
+    border-radius: var(--sva-r-btn);
+}
+.sva-btn--gold:hover {
+    background: var(--sva-gold-hover);
+}
+.sva-btn--dark {
+    background: var(--sva-ink);
+    color: #fff !important;
+    border-radius: var(--sva-r-btn);
+}
+.sva-btn--dark:hover {
+    background: #333;
+}
+.sva-btn--outline-light {
+    background: transparent;
+    color: rgba(255, 255, 255, 0.85) !important;
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    border-radius: var(--sva-r-btn);
+}
+.sva-btn--outline-light:hover {
+    border-color: #fff;
+    color: #fff !important;
+}
+.sva-btn--outline-dark {
+    background: transparent;
+    color: var(--sva-ink) !important;
+    border: 2px solid var(--sva-ink);
+    border-radius: var(--sva-r-btn);
+}
+.sva-btn--outline-dark:hover {
+    background: var(--sva-ink);
+    color: #fff !important;
+}
+
+/* ── Cards ─────────────────────────────────────────────────────────────────── */
+.sva-card {
+    background: var(--sva-canvas);
+    border-radius: var(--sva-r-card);
+    padding: 28px;
+    border: 1px solid var(--sva-border);
+}
+.sva-card--soft {
+    background: var(--sva-canvas-soft);
+    border-color: transparent;
+}
+.sva-card--dark {
+    background: #222;
+    border-color: #333;
+    color: #fff;
+}
+
+/* ── Images ────────────────────────────────────────────────────────────────── */
+.sva-img {
+    border-radius: var(--sva-r-img);
+    object-fit: cover;
+    width: 100%;
+    display: block;
+}
+.sva-img--full {
+    border-radius: 0;
+}
+.sva-img--cover {
+    height: 100%;
+}
+
+/* ── Stats bar ──────────────────────────────────────────────────────────────── */
+.sva-stat-bar {
+    background: #111;
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
+    padding: 60px 0;
+}
+.sva-stat__num {
+    display: block;
+    font-size: clamp(2.2rem, 4vw, 3rem);
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 6px;
+}
+.sva-stat__label {
+    margin: 0;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.45);
+}
+
+/* ── Blockquote ──────────────────────────────────────────────────────────────── */
+.sva-blockquote {
+    border-left: 3px solid var(--sva-gold);
+    padding-left: 24px;
+    margin-bottom: 24px;
+}
+.sva-blockquote p {
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-bottom: 8px;
+}
+.sva-blockquote footer {
+    font-weight: 600;
+}
+
+/* ── Approach principles ─────────────────────────────────────────────────── */
+.sva-principle {
+    padding: 56px 0;
+    border-bottom: 1px solid var(--sva-border);
+    max-width: 900px;
+    margin: 0 auto;
+}
+.sva-principle:last-child {
+    border-bottom: none;
+}
+.sva-principle__num {
+    font-size: clamp(4rem, 8vw, 6rem);
+    font-weight: 900;
+    color: #efefef;
+    line-height: 1;
+    margin-bottom: 0;
+}
+.sva-principle__title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-top: -16px;
+    margin-bottom: 0;
+}
+
+/* ── Team cards ──────────────────────────────────────────────────────────── */
+.sva-member {
+    background: var(--sva-canvas);
+    border-radius: var(--sva-r-card);
+    overflow: hidden;
+    border: 1px solid var(--sva-border);
+    height: 100%;
+    transition:
+        box-shadow 0.2s,
+        transform 0.2s;
+}
+.sva-member:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+}
+.sva-member__photo {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    display: block;
+}
+.sva-member__placeholder {
+    width: 100%;
+    height: 240px;
+    background: var(--sva-canvas-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sva-member__placeholder span {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ccc;
+}
+.sva-member__body {
+    padding: 20px 24px 24px;
+}
+.sva-member__name {
+    font-weight: 700;
+    margin-bottom: 4px;
+    font-size: 1rem;
+    color: #000;
+}
+.sva-member__role {
+    color: var(--sva-mute);
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+.sva-member__bio {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+.sva-member__links a {
+    color: #333;
+    font-size: 15px;
+    text-decoration: none;
+}
+.sva-member__links a:hover {
+    color: var(--sva-gold);
+}
+
+/* ── Portfolio ───────────────────────────────────────────────────────────── */
+.sva-portfolio-card {
+    background: var(--sva-canvas);
+    border-radius: 16px;
+    border: 1px solid var(--sva-border);
+    padding: 20px 16px;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition:
+        box-shadow 0.2s,
+        transform 0.2s;
+}
+.sva-portfolio-card:hover {
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+}
+.sva-portfolio-card__name {
+    margin: 0;
+    font-size: 12px;
+    color: #666;
+    display: none;
+}
+
+.sva-filter-pill {
+    padding: 8px 20px;
+    border: 1.5px solid var(--sva-border);
+    background: var(--sva-canvas);
+    border-radius: 9999px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s;
+    color: var(--sva-ink);
+}
+.sva-filter-pill.active,
+.sva-filter-pill:hover {
+    background: var(--sva-ink);
+    color: #fff;
+    border-color: var(--sva-ink);
+}
+
+/* ── Blog cards ──────────────────────────────────────────────────────────── */
+.sva-blog-card {
+    background: var(--sva-canvas);
+    border-radius: var(--sva-r-card);
+    overflow: hidden;
+    border: 1px solid var(--sva-border);
+    height: 100%;
+    transition:
+        box-shadow 0.2s,
+        transform 0.2s;
+}
+.sva-blog-card:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    transform: translateY(-4px);
+}
+.sva-blog-card__img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+.sva-blog-card__body {
+    padding: 24px;
+}
+.sva-blog-card__meta {
+    font-size: 12px;
+    color: var(--sva-mute);
+    margin-bottom: 10px;
+}
+.sva-blog-card__title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 8px;
+    color: #0e0f0c;
+}
+.sva-blog-card__title a {
+    color: inherit;
+    text-decoration: none;
+}
+.sva-blog-card__title a:hover {
+    color: var(--sva-gold);
+}
+.sva-blog-card__excerpt {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+.sva-blog-card__link {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--sva-gold);
+    text-decoration: none;
+    border-bottom: 1.5px solid var(--sva-gold);
+    padding-bottom: 1px;
+}
+.sva-blog-card__link:hover {
+    color: var(--sva-gold-hover);
+    border-color: var(--sva-gold-hover);
+}
+
+/* ── Contact form ─────────────────────────────────────────────────────────── */
+.sva-field {
+    width: 100%;
+    border-radius: 12px;
+    border: 1.5px solid var(--sva-border);
+    padding: 14px 18px;
+    font-size: 15px;
+    background: var(--sva-canvas);
+    color: var(--sva-ink);
+    transition: border-color 0.2s;
+    outline: none;
+    display: block;
+}
+.sva-field:focus {
+    border-color: var(--sva-gold);
+}
+.sva-field.is-invalid {
+    border-color: #d03238;
+}
+
+/* ── FAQ ─────────────────────────────────────────────────────────────────── */
+.sva-faq-item {
+    background: var(--sva-canvas);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 12px;
+    border: 1px solid var(--sva-border);
+}
+.sva-faq-item .accordion-button {
+    font-weight: 600;
+    font-size: 1rem;
+    background: var(--sva-canvas);
+    color: var(--sva-ink);
+    padding: 22px 24px;
+}
+.sva-faq-item .accordion-button:not(.collapsed) {
+    color: var(--sva-gold);
+    background: var(--sva-canvas);
+    box-shadow: none;
+}
+.sva-faq-item .accordion-button:focus {
+    box-shadow: none;
+}
+.sva-faq-item .accordion-body {
+    color: var(--sva-body);
+    font-size: 15px;
+    line-height: 1.75;
+    padding: 0 24px 24px;
+}
