@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
             PrinciplesSeeder::class,
             TeamMembersSeeder::class,
             PortfolioCompaniesSeeder::class,
+            BrandLogosSeeder::class,
             TestimonialsSeeder::class,
             AwardsSeeder::class,
             ServicesSeeder::class,
