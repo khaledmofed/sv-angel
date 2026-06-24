@@ -34,7 +34,7 @@ jobs:
           APP_KEY="${APP_KEY#\"}"
           APP_KEY="${APP_KEY%\"}"
           cat > .env <<EOF
-          APP_NAME=SV Angel
+          APP_NAME="SV Angel"
           APP_ENV=production
           APP_DEBUG=false
           APP_KEY=${APP_KEY}
