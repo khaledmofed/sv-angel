@@ -32,7 +32,9 @@ RUN composer dump-autoload --optimize
 RUN test -f .env && grep -q 'APP_KEY=base64:' .env \
     || (echo "BUILD ERROR: .env with APP_KEY must exist (created in GitHub Actions before docker build)" && exit 1)
 
-RUN chown -R www-data:www-data storage bootstrap/cache .env \
+RUN ln -sfn /var/www/html/storage/app/public /var/www/html/public/storage
+
+RUN chown -R www-data:www-data storage bootstrap/cache public/storage .env \
     && chmod -R 775 storage bootstrap/cache \
     && chmod 644 .env
 
