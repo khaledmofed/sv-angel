@@ -52,11 +52,10 @@ class TestimonialsSeeder extends Seeder
             ],
         ];
 
+        Testimonial::truncate();
+
         foreach ($items as $i) {
-            Testimonial::updateOrCreate(
-                ['author_name' => $i['author_name']],
-                array_merge($i, ['is_active' => true])
-            );
+            Testimonial::create(array_merge($i, ['is_active' => true]));
         }
     }
 }
