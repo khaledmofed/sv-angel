@@ -98,7 +98,7 @@
         <div class="header-area-2__inner">
           <div class="header__logo">
             <a href="{{ route('home') }}">
-              <img src="{{ setting('site_logo', '/assets/img/logo/sva-color.png') }}" alt="{{ setting('site_name') }}" style="height:70px;width:auto;">
+              <img src="{{ setting('site_logo', '/assets/img/logo/sva-color.png') }}" alt="{{ setting('site_name') }}" style="height:60px;width:auto;">
             </a>
           </div>
           <div class="header__nav">
