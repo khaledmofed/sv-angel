@@ -27,21 +27,33 @@
 <div class="sva-stat-bar">
   <div class="container">
     <div class="row text-center g-4">
-      <div class="col-6 col-md-3 sva-stat">
-        <span class="sva-stat__num">30+</span>
-        <p class="sva-stat__label">Years Investing</p>
+      <div class="col-6 col-md-4 col-xl-3 sva-stat">
+        <span class="sva-stat__num">$4B+</span>
+        <p class="sva-stat__label">Funded</p>
       </div>
-      <div class="col-6 col-md-3 sva-stat">
-        <span class="sva-stat__num">200+</span>
-        <p class="sva-stat__label">Portfolio Companies</p>
+      <div class="col-6 col-md-4 col-xl-3 sva-stat">
+        <span class="sva-stat__num">1,562+</span>
+        <p class="sva-stat__label">Number of Investments</p>
       </div>
-      <div class="col-6 col-md-3 sva-stat">
-        <span class="sva-stat__num">$1T+</span>
-        <p class="sva-stat__label">Combined Valuation</p>
+      <div class="col-6 col-md-4 col-xl-3 sva-stat">
+        <span class="sva-stat__num">510+</span>
+        <p class="sva-stat__label">Exits</p>
       </div>
-      <div class="col-6 col-md-3 sva-stat">
-        <span class="sva-stat__num">∞</span>
-        <p class="sva-stat__label">Commitment to Founders</p>
+      <div class="col-6 col-md-4 col-xl-3 sva-stat">
+        <span class="sva-stat__num">290+</span>
+        <p class="sva-stat__label">Diversity Investments</p>
+      </div>
+      <div class="col-6 col-md-4 col-xl-3 sva-stat">
+        <span class="sva-stat__num">35+</span>
+        <p class="sva-stat__label">Lead Investments</p>
+      </div>
+      <div class="col-6 col-md-4 col-xl-3 sva-stat">
+        <span class="sva-stat__num">60+</span>
+        <p class="sva-stat__label">AI Companies</p>
+      </div>
+      <div class="col-6 col-md-4 col-xl-3 sva-stat">
+        <span class="sva-stat__num">34+</span>
+        <p class="sva-stat__label">Fintech &amp; Crypto</p>
       </div>
     </div>
   </div>

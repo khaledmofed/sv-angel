@@ -249,33 +249,45 @@
       <div class="mission-fact-wrapper">
         <div class="row mb-minus-30">
           <div class="col-lg-4 col-md-6">
-            <div class="mission-fact-box">
-              <p class="desc">Portfolio Companies</p>
-              <h4><span class="odometer" data-count="{{ setting('stats_projects','200') }}">0</span>+</h4>
+            <div class="mission-fact-box mission-fact-box--gold">
+              <p class="desc">Funded</p>
+              <h4>$<span class="odometer" data-count="{{ setting('stat_funded','4') }}">0</span>B+</h4>
             </div>
           </div>
           <div class="col-lg-4 col-md-6">
-            <div class="mission-fact-box mission-fact-box--gold">
-              <p class="desc">Years Investing</p>
-              <h4><span class="odometer" data-count="{{ setting('stats_years','30') }}">0</span>+</h4>
+            <div class="mission-fact-box">
+              <p class="desc">Lead Investments</p>
+              <h4><span class="odometer" data-count="{{ setting('stat_lead_investments','35') }}">0</span>+</h4>
             </div>
           </div>
           <div class="col-lg-4 col-md-6">
             <div class="mission-fact-box mission-fact-box--dark">
-              <p class="desc">Total Investments</p>
-              <h4><span class="odometer" data-count="{{ setting('stats_investments','700') }}">0</span>+</h4>
+              <p class="desc">Number of Investments</p>
+              <h4><span class="odometer" data-count="{{ setting('stat_investments_count','1562') }}">0</span>+</h4>
             </div>
           </div>
           <div class="col-lg-4 col-md-6">
             <div class="mission-fact-box">
-              <p class="desc">Combined Portfolio Value</p>
-              <h4>$<span class="odometer" data-count="{{ setting('stats_valuation','1') }}">0</span>T+</h4>
+              <p class="desc">Diversity Investments</p>
+              <h4><span class="odometer" data-count="{{ setting('stat_diversity_investments','290') }}">0</span>+</h4>
             </div>
           </div>
           <div class="col-lg-4 col-md-6">
             <div class="mission-fact-box mission-fact-box--gold">
-              <p class="desc">Unicorn Companies</p>
-              <h4><span class="odometer" data-count="{{ setting('stats_unicorns','15') }}">0</span>+</h4>
+              <p class="desc">Exits</p>
+              <h4><span class="odometer" data-count="{{ setting('stat_exits','510') }}">0</span>+</h4>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="mission-fact-box mission-fact-box--dark">
+              <p class="desc">AI Companies</p>
+              <h4><span class="odometer" data-count="{{ setting('stat_ai_companies','60') }}">0</span>+</h4>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="mission-fact-box">
+              <p class="desc">Fintech &amp; Crypto</p>
+              <h4><span class="odometer" data-count="{{ setting('stat_fintech_crypto','34') }}">0</span>+</h4>
             </div>
           </div>
         </div>
