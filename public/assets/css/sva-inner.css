@@ -423,7 +423,7 @@
 }
 .sva-faq-item .accordion-button {
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 1.15rem;
     background: var(--sva-canvas);
     color: var(--sva-ink);
     padding: 22px 24px;
@@ -438,7 +438,7 @@
 }
 .sva-faq-item .accordion-body {
     color: var(--sva-body);
-    font-size: 15px;
+    font-size: 0.95rem;
     line-height: 1.75;
     padding: 0 24px 24px;
 }
