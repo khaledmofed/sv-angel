@@ -8314,16 +8314,19 @@ h2.sub-title img.circle {
 }
 .mission-fact-box h4 {
     font-weight: 700;
-    font-size: 100px;
+    font-size: 70px;
     line-height: 90px;
     color: var(--white);
     font-family: var(--font_brico);
+}
+.bilding-better .sva-h2 {
+    color: #181818;
 }
 .mission-fact-box .odometer,
 .mission-fact-box h4 .odometer.odometer-auto-theme,
 .mission-fact-box h4 .odometer.odometer-theme-default {
     font-weight: 700;
-    font-size: 100px;
+    font-size: 70px;
     line-height: 90px;
     color: var(--white);
     font-family: var(--font_brico);

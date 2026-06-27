@@ -75,7 +75,7 @@
       <form method="POST" action="{{ route('admin.settings.update') }}">
         @csrf
         <input type="hidden" name="group" value="general">
-        @foreach(['site_name'=>'Site Name','site_tagline'=>'Site Tagline','footer_copyright'=>'Footer Copyright','stat_funded'=>'Funded (Billions USD)','stat_lead_investments'=>'Lead Investments','stat_investments_count'=>'Number of Investments','stat_diversity_investments'=>'Diversity Investments','stat_exits'=>'Exits','stat_ai_companies'=>'AI Companies','stat_fintech_crypto'=>'Fintech & Crypto Companies'] as $key=>$label)
+        @foreach(['site_name'=>'Site Name','site_tagline'=>'Site Tagline','footer_copyright'=>'Footer Copyright','stat_funded'=>'Total Funded (e.g. 599.4)','stat_investments_count'=>'Total Investments','stat_funds_raised'=>'Funds Raised','stat_diversity_investments'=>'Diversity Investments','stat_exits'=>'Exits','stat_lead_investments'=>'Lead Investments','stat_ai_fintech_crypto'=>'AI, Fintech & Crypto','stat_other_sectors'=>'Other Sectors'] as $key=>$label)
         <div class="mb-3">
           <label class="form-label fw-semibold">{{ $label }}</label>
           <input type="text" name="{{ $key }}" class="form-control" value="{{ $settings[$key]->value ?? '' }}">

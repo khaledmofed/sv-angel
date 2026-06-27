@@ -16,7 +16,7 @@
       </p>
       <p style="font-size:0.95rem;color:var(--sva-gold);font-weight:600;letter-spacing:.04em;margin-bottom:40px;">— Ron Conway</p>
       <div class="d-flex gap-3 flex-wrap">
-        <a href="{{ route('about.approach') }}" class="sva-btn sva-btn--gold">Our Approach</a>
+        <a href="{{ route('about.approach') }}" class="btn-primary">Our Approach</a>
         <a href="{{ route('about.team') }}"     class="sva-btn sva-btn--outline-light">Meet the Team</a>
       </div>
     </div>
@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 {{-- Building a better world --}}
-<section class="sva-section sva-section--soft">
+<section class="sva-section sva-section--soft bilding-better">
   <div class="container">
     <div class="row align-items-center g-5">
       <div class="col-lg-7">
@@ -206,7 +206,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <img src="{{ asset('storage/about/sf_city.jpg') }}" alt="SF City" class="sva-img" style="height:240px;object-fit:cover;">
           </div>
           <div class="col-12">
-            <img src="{{ asset('storage/about/giving_pledge.png') }}" alt="Giving Pledge" class="sva-img" style="height:180px;object-fit:contain;background:#e8e4da;padding:20px;">
+            <img src="{{ asset('storage/about/giving_pledge.png') }}" alt="Giving Pledge" class="sva-img" style="height: 200px;object-fit: cover;">
           </div>
         </div>
       </div>
@@ -226,7 +226,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <h2 class="sva-h2" style="color:#fff;">Our work is never finished</h2>
         <p class="sva-lead sva-lead--light" style="margin-bottom:32px;">We're proud of our history, and we're even more excited about the future. As the pace of change continues to accelerate, we're tracking each new sector as well as the bright minds leading the charge. Here's what doesn't change: we're here in service of founders, upholding a moral standard in the ecosystem to ensure that technology is a force for good.</p>
         <div class="d-flex gap-3 flex-wrap">
-          <a href="{{ route('about.approach') }}" class="sva-btn sva-btn--gold">Our Approach</a>
+          <a href="{{ route('about.approach') }}" class="btn-primary">Our Approach</a>
           <a href="{{ route('portfolio') }}"       class="sva-btn sva-btn--outline-light">View Portfolio</a>
         </div>
       </div>
