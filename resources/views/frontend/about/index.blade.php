@@ -109,7 +109,7 @@
     .sva-tl-row--now .sva-tl-right::before { background:#fff; width:14px; height:14px; left:-7px; top:7px; }
     /* Story slider */
     .sva-story-sticky { position:sticky; top:100px; }
-    .sva-story-swiper { height:660px; overflow:hidden; }
+    .sva-story-swiper { height:1156px; overflow:hidden; }
     .sva-story-swiper .swiper-slide img {
       width:100%; height:100%; object-fit:cover; display:block; border-radius:14px;
     }
