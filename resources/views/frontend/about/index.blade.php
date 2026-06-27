@@ -45,32 +45,36 @@
   <div class="container">
     <div class="row text-center g-4">
       <div class="col-6 col-md-4 col-xl-3 sva-stat">
-        <span class="sva-stat__num">$4B+</span>
-        <p class="sva-stat__label">Funded</p>
+        <span class="sva-stat__num">$599.4B+</span>
+        <p class="sva-stat__label">Total Funded (USD)</p>
       </div>
       <div class="col-6 col-md-4 col-xl-3 sva-stat">
-        <span class="sva-stat__num">1,562+</span>
-        <p class="sva-stat__label">Number of Investments</p>
+        <span class="sva-stat__num">1,572+</span>
+        <p class="sva-stat__label">Total Investments</p>
       </div>
       <div class="col-6 col-md-4 col-xl-3 sva-stat">
-        <span class="sva-stat__num">510+</span>
-        <p class="sva-stat__label">Exits</p>
+        <span class="sva-stat__num">11+</span>
+        <p class="sva-stat__label">Funds Raised</p>
       </div>
       <div class="col-6 col-md-4 col-xl-3 sva-stat">
-        <span class="sva-stat__num">290+</span>
+        <span class="sva-stat__num">290</span>
         <p class="sva-stat__label">Diversity Investments</p>
       </div>
       <div class="col-6 col-md-4 col-xl-3 sva-stat">
-        <span class="sva-stat__num">35+</span>
+        <span class="sva-stat__num">513</span>
+        <p class="sva-stat__label">Exits</p>
+      </div>
+      <div class="col-6 col-md-4 col-xl-3 sva-stat">
+        <span class="sva-stat__num">35</span>
         <p class="sva-stat__label">Lead Investments</p>
       </div>
       <div class="col-6 col-md-4 col-xl-3 sva-stat">
-        <span class="sva-stat__num">60+</span>
-        <p class="sva-stat__label">AI Companies</p>
+        <span class="sva-stat__num">100+</span>
+        <p class="sva-stat__label">AI, Fintech &amp; Crypto</p>
       </div>
       <div class="col-6 col-md-4 col-xl-3 sva-stat">
-        <span class="sva-stat__num">34+</span>
-        <p class="sva-stat__label">Fintech &amp; Crypto</p>
+        <span class="sva-stat__num">1,472+</span>
+        <p class="sva-stat__label">Other Sectors</p>
       </div>
     </div>
   </div>
@@ -82,54 +86,105 @@
     <div class="text-center mb-5">
       <span class="sva-eyebrow">Our History</span>
       <h2 class="sva-h2" style="color:#fff;">Pushing progress over time</h2>
-      <p style="color:rgba(255,255,255,.6);font-size:1.05rem;max-width:560px;margin:0 auto;">
+      <p style="color:rgba(255,255,255,.6);font-size:1.1rem;max-width:560px;margin:0 auto;">
         From Ron Conway's first angel investments to backing the defining companies of the AI era.
       </p>
     </div>
 
     <style>
-    .sva-tl-wrap { position:relative; max-width:760px; margin:0 auto; }
-    .sva-tl-wrap::before { content:''; position:absolute; left:56px; top:0; bottom:0; width:1px; background:rgba(255,255,255,.12); }
-    .sva-tl-row { display:grid !important; grid-template-columns:56px 1fr; gap:0; margin-bottom:40px; position:relative; }
+    .sva-tl-wrap { position:relative; }
+    .sva-tl-wrap::before { content:''; position:absolute; left:72px; top:0; bottom:0; width:1px; background:rgba(255,255,255,.15); }
+    .sva-tl-row { display:grid !important; grid-template-columns:72px 1fr; gap:0; margin-bottom:52px; position:relative; }
     .sva-tl-row:last-child { margin-bottom:0; }
-    .sva-tl-left { text-align:right; padding-right:28px; padding-top:3px; }
-    .sva-tl-year { font-size:.9rem; font-weight:800; color:var(--sva-gold); letter-spacing:.04em; display:block; }
-    .sva-tl-right { padding-left:32px; padding-bottom:8px; position:relative; }
+    .sva-tl-left { text-align:right; padding-right:28px; padding-top:5px; }
+    .sva-tl-year { font-size:1.1rem; font-weight:800; color:var(--sva-gold); letter-spacing:.04em; display:block; }
+    .sva-tl-right { padding-left:36px; padding-bottom:8px; position:relative; }
     .sva-tl-right::before {
-      content:''; position:absolute; left:-5px; top:6px;
-      width:11px; height:11px; border-radius:50%;
+      content:''; position:absolute; left:-6px; top:8px;
+      width:12px; height:12px; border-radius:50%;
       background:var(--sva-gold); border:2px solid #111;
     }
-    .sva-tl-right h5 { font-size:1rem; font-weight:700; color:#fff; margin:0 0 6px; }
-    .sva-tl-right p  { font-size:.92rem; line-height:1.75; color:rgba(255,255,255,.58); margin:0; }
-    .sva-tl-row--now .sva-tl-right::before { background:#fff; width:13px; height:13px; left:-6px; top:5px; }
+    .sva-tl-right h5 { font-size:1.35rem; font-weight:700; color:#fff; margin:0 0 10px; }
+    .sva-tl-right p  { font-size:1.05rem; line-height:1.8; color:rgba(255,255,255,.6); margin:0; }
+    .sva-tl-row--now .sva-tl-right::before { background:#fff; width:14px; height:14px; left:-7px; top:7px; }
+    /* Story slider */
+    .sva-story-sticky { position:sticky; top:100px; }
+    .sva-story-swiper { height:600px; border-radius:20px; overflow:hidden; }
+    .sva-story-swiper .swiper-slide { height:600px !important; }
+    .sva-story-swiper .swiper-slide img { width:100%; height:100%; object-fit:cover; display:block; }
     </style>
 
-    <div class="sva-tl-wrap">
-      @php
-      $milestones = [
-        ['year'=>'1994','title'=>'The Beginning','body'=>'Ron Conway begins angel investing in Silicon Valley, backing early-stage technology founders with capital and hands-on support.'],
-        ['year'=>'1998','title'=>'Early Internet Wave','body'=>'First major technology investments including Google. Establishes a reputation for founder-first investing and deep operator networks.'],
-        ['year'=>'2009','title'=>'SV Angel Founded','body'=>'SV Angel is formally established as a seed fund, codifying Ron\'s hyper-engaged investing style into a team-driven platform.'],
-        ['year'=>'2012','title'=>'Portfolio Reaches Scale','body'=>'Investments in Airbnb, Pinterest, Twitter, Stripe and dozens more define SV Angel as the most connected seed fund in Silicon Valley.'],
-        ['year'=>'2016','title'=>'Growth Fund Launched','body'=>'SV Angel expands its strategy with a dedicated Growth fund to support portfolio companies as they scale beyond seed stage.'],
-        ['year'=>'2020','title'=>'Historic Exits','body'=>'Airbnb and DoorDash go public on the same day — two landmark portfolio exits representing decades of founder partnership.'],
-        ['year'=>'2023','title'=>'Leading the AI Era','body'=>'Early investments in OpenAI, Anthropic, ElevenLabs, and Sierra position SV Angel at the center of the artificial intelligence revolution.'],
-        ['year'=>'Now', 'title'=>'The Next 30 Years','body'=>'We look forward to the next 30 years of SV Angel, supporting you and future generations of founders.','now'=>true],
-      ];
-      @endphp
-      @foreach($milestones as $m)
-      <div class="sva-tl-row {{ !empty($m['now']) ? 'sva-tl-row--now' : '' }}">
-        <div class="sva-tl-left"><span class="sva-tl-year">{{ $m['year'] }}</span></div>
-        <div class="sva-tl-right">
-          <h5>{{ $m['title'] }}</h5>
-          <p>{{ $m['body'] }}</p>
+    <div class="row align-items-start g-5">
+
+      {{-- Timeline --}}
+      <div class="col-lg-7">
+        <div class="sva-tl-wrap">
+          @php
+          $milestones = [
+            ['year'=>'1994','title'=>'The Beginning','body'=>'Ron Conway begins angel investing in Silicon Valley, backing early-stage technology founders with capital and hands-on support.'],
+            ['year'=>'1998','title'=>'Early Internet Wave','body'=>'First major technology investments including Google. Establishes a reputation for founder-first investing and deep operator networks.'],
+            ['year'=>'2009','title'=>'SV Angel Founded','body'=>'SV Angel is formally established as a seed fund, codifying Ron\'s hyper-engaged investing style into a team-driven platform.'],
+            ['year'=>'2012','title'=>'Portfolio Reaches Scale','body'=>'Investments in Airbnb, Pinterest, Twitter, Stripe and dozens more define SV Angel as the most connected seed fund in Silicon Valley.'],
+            ['year'=>'2016','title'=>'Growth Fund Launched','body'=>'SV Angel expands its strategy with a dedicated Growth fund to support portfolio companies as they scale beyond seed stage.'],
+            ['year'=>'2020','title'=>'Historic Exits','body'=>'Airbnb and DoorDash go public on the same day — two landmark portfolio exits representing decades of founder partnership.'],
+            ['year'=>'2023','title'=>'Leading the AI Era','body'=>'Early investments in OpenAI, Anthropic, ElevenLabs, and Sierra position SV Angel at the center of the artificial intelligence revolution.'],
+            ['year'=>'Now', 'title'=>'The Next 30 Years','body'=>'We look forward to the next 30 years of SV Angel, supporting you and future generations of founders.','now'=>true],
+          ];
+          @endphp
+          @foreach($milestones as $m)
+          <div class="sva-tl-row {{ !empty($m['now']) ? 'sva-tl-row--now' : '' }}">
+            <div class="sva-tl-left"><span class="sva-tl-year">{{ $m['year'] }}</span></div>
+            <div class="sva-tl-right">
+              <h5>{{ $m['title'] }}</h5>
+              <p>{{ $m['body'] }}</p>
+            </div>
+          </div>
+          @endforeach
         </div>
       </div>
-      @endforeach
+
+      {{-- Vertical story slider — desktop only --}}
+      <div class="col-lg-5 d-none d-lg-block">
+        <div class="sva-story-sticky">
+          <div class="swiper sva-story-swiper">
+            <div class="swiper-wrapper">
+              @php
+              $storyImgs = [
+                ['src'=>'https://images.ctfassets.net/9546dfueqxy5/5rW8aBKCz7PqeEhsCgbJiZ/6b6804fd3339c2e8a9358d1adfa5ad68/ronandjessica.jpeg','alt'=>'Ron Conway'],
+                ['src'=>'https://images.ctfassets.net/9546dfueqxy5/6SXeBoSgHLR5GnjASt5Yp2/ff852f81b78cff19db06f70bbdf5b059/sva-08.jpg','alt'=>'SV Angel'],
+                ['src'=>'https://images.ctfassets.net/9546dfueqxy5/5MvyXV6qZ0E9nffDZObiU5/c812ba88df1f6b6c8b52131c92f9cfc8/52749523389_7e4ddef84a_k.jpg','alt'=>'SV Angel'],
+                ['src'=>'https://images.ctfassets.net/9546dfueqxy5/692baunArwpxUc5WrsZkug/fdcb3b5138a4b0f3d4d83dbaed75910f/sva-01.jpg','alt'=>'SV Angel'],
+                ['src'=>'https://images.ctfassets.net/9546dfueqxy5/5iEqBsR2QJNaxLf4ELX2Hd/66bd89cd7a59b457f110f483b45f23c6/sva-03.jpg','alt'=>'SV Angel'],
+                ['src'=>'https://images.ctfassets.net/9546dfueqxy5/8tSl1DtP4k5h03tBpV359/f9750740809891a46fa4a40cd286ab7a/sva-04.jpg','alt'=>'SV Angel'],
+                ['src'=>'https://images.ctfassets.net/9546dfueqxy5/1E1SXGW67GtbOCdY0w64sa/6c05097883606dc65e60b9a385af7f9a/IMG_9054.jpg','alt'=>'SV Angel Event'],
+                ['src'=>'https://images.ctfassets.net/9546dfueqxy5/5066jyfelRNkVGKFXy302g/249df175f5942592790258d4765c443f/sva-02.jpg','alt'=>'SV Angel'],
+                ['src'=>'https://images.ctfassets.net/9546dfueqxy5/5xpTaBIA8BivbJdLNPT7pp/68b15f07382a1ec076db4ebfc943c350/Founder-Summit-Laurene-Powell_010__1_.jpg','alt'=>'Founder Summit'],
+              ];
+              @endphp
+              @foreach($storyImgs as $img)
+              <div class="swiper-slide">
+                <img src="{{ $img['src'] }}?w=600&h=800&fit=fill" alt="{{ $img['alt'] }}" loading="lazy">
+              </div>
+              @endforeach
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  new Swiper('.sva-story-swiper', {
+    direction: 'vertical',
+    loop: true,
+    speed: 1000,
+    autoplay: { delay: 2800, disableOnInteraction: false },
+    grabCursor: true,
+  });
+});
+</script>
 
 {{-- Building a better world --}}
 <section class="sva-section sva-section--soft">
