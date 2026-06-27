@@ -109,9 +109,10 @@
     .sva-tl-row--now .sva-tl-right::before { background:#fff; width:14px; height:14px; left:-7px; top:7px; }
     /* Story slider */
     .sva-story-sticky { position:sticky; top:100px; }
-    .sva-story-swiper { height:600px; border-radius:20px; overflow:hidden; }
-    .sva-story-swiper .swiper-slide { height:600px !important; }
-    .sva-story-swiper .swiper-slide img { width:100%; height:100%; object-fit:cover; display:block; }
+    .sva-story-swiper { height:660px; overflow:hidden; }
+    .sva-story-swiper .swiper-slide img {
+      width:100%; height:100%; object-fit:cover; display:block; border-radius:14px;
+    }
     </style>
 
     <div class="row align-items-start g-5">
@@ -163,7 +164,7 @@
               @endphp
               @foreach($storyImgs as $img)
               <div class="swiper-slide">
-                <img src="{{ $img['src'] }}?w=600&h=800&fit=fill" alt="{{ $img['alt'] }}" loading="lazy">
+                <img src="{{ $img['src'] }}?w=500&h=320&fit=fill" alt="{{ $img['alt'] }}" loading="lazy">
               </div>
               @endforeach
             </div>
@@ -178,10 +179,13 @@
 document.addEventListener('DOMContentLoaded', function () {
   new Swiper('.sva-story-swiper', {
     direction: 'vertical',
+    slidesPerView: 5,
+    spaceBetween: 14,
     loop: true,
-    speed: 1000,
-    autoplay: { delay: 2800, disableOnInteraction: false },
-    grabCursor: true,
+    speed: 3000,
+    autoplay: { delay: 0, disableOnInteraction: false },
+    freeMode: { enabled: true, momentum: false },
+    allowTouchMove: false,
   });
 });
 </script>
