@@ -138,7 +138,7 @@
     {{-- Background video (muted, autoplay, loop) --}}
     <video autoplay muted loop playsinline
            style="width:100%;max-height:110vh;object-fit:cover;display:block;">
-      <source src="/assets/video/sv-angel-hero-1080p-v2.mp4" type="video/mp4">
+      <source src="/assets/video/Sv-Angel-Hero-2160P-V5-Master.mp4" type="video/mp4">
     </video>
 
     {{-- Play button → bottom-right corner --}}
@@ -186,7 +186,7 @@
     display: 'block', outline: 'none', background: '#000'
   });
   var src = document.createElement('source');
-  src.src  = '/assets/video/sv-angel-hero-1080p-v2.mp4';
+  src.src  = '/assets/video/Sv-Angel-Hero-2160P-V5-Master.mp4';
   src.type = 'video/mp4';
   vid.appendChild(src);
 
