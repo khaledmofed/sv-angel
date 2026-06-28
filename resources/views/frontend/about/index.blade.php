@@ -9,15 +9,15 @@
 
     {{-- Left: text --}}
     <div style="flex:0 0 55%;max-width:55%;padding:80px 6% 80px 6%;display:flex;flex-direction:column;justify-content:center;">
-      <span class="sva-eyebrow">Our Story</span>
-      <h1 class="sva-page-title" style="font-size:clamp(2.8rem,4.5vw,5rem);margin-bottom:28px;">The SV Angel story</h1>
+      <span class="sva-eyebrow">{{ __('Our Story') }}</span>
+      <h1 class="sva-page-title" style="font-size:clamp(2.8rem,4.5vw,5rem);margin-bottom:28px;">{{ __('The SV Angel story') }}</h1>
       <p style="font-size:1.15rem;line-height:1.85;color:rgba(255,255,255,.75);max-width:560px;margin-bottom:40px;">
-        SV Angel grew out of my personal style of investing — hyper-engaged, founder-focused, and community-oriented. Codifying that strategy has helped SV Angel build some of the most iconic companies of our time. Over years of investing, the team has grown around our willingness to roll up our sleeves and assist founders when things get tough. Across our work with Google, Twitter, Meta, Airbnb, Coinbase, Stripe, Pinterest and more, we've seen everything that can go wrong — and right — in company-building, and we share that experience to help founders when it matters most.
+        {{ __('SV Angel grew out of my personal style of investing — hyper-engaged, founder-focused, and community-oriented. Codifying that strategy has helped SV Angel build some of the most iconic companies of our time. Over years of investing, the team has grown around our willingness to roll up our sleeves and assist founders when things get tough. Across our work with Google, Twitter, Meta, Airbnb, Coinbase, Stripe, Pinterest and more, we\'ve seen everything that can go wrong — and right — in company-building, and we share that experience to help founders when it matters most.') }}
       </p>
       <p style="font-size:0.95rem;color:var(--sva-gold);font-weight:600;letter-spacing:.04em;margin-bottom:40px;">— Ron Conway</p>
       <div class="d-flex gap-3 flex-wrap">
-        <a href="{{ route('about.approach') }}" class="btn-primary">Our Approach</a>
-        <a href="{{ route('about.team') }}"     class="sva-btn sva-btn--outline-light">Meet the Team</a>
+        <a href="{{ route('about.approach') }}" class="btn-primary">{{ __('Our Approach') }}</a>
+        <a href="{{ route('about.team') }}"     class="sva-btn sva-btn--outline-light">{{ __('Meet the Team') }}</a>
       </div>
     </div>
 
@@ -46,35 +46,35 @@
     <div class="row text-center g-4">
       <div class="col-6 col-md-4 col-xl-3 sva-stat">
         <span class="sva-stat__num">$599.4B+</span>
-        <p class="sva-stat__label">Total Funded (USD)</p>
+        <p class="sva-stat__label">{{ __('Total Funded (USD)') }}</p>
       </div>
       <div class="col-6 col-md-4 col-xl-3 sva-stat">
         <span class="sva-stat__num">1,572+</span>
-        <p class="sva-stat__label">Total Investments</p>
+        <p class="sva-stat__label">{{ __('Total Investments') }}</p>
       </div>
       <div class="col-6 col-md-4 col-xl-3 sva-stat">
         <span class="sva-stat__num">11+</span>
-        <p class="sva-stat__label">Funds Raised</p>
+        <p class="sva-stat__label">{{ __('Funds Raised') }}</p>
       </div>
       <div class="col-6 col-md-4 col-xl-3 sva-stat">
         <span class="sva-stat__num">290</span>
-        <p class="sva-stat__label">Diversity Investments</p>
+        <p class="sva-stat__label">{{ __('Diversity Investments') }}</p>
       </div>
       <div class="col-6 col-md-4 col-xl-3 sva-stat">
         <span class="sva-stat__num">513</span>
-        <p class="sva-stat__label">Exits</p>
+        <p class="sva-stat__label">{{ __('Exits') }}</p>
       </div>
       <div class="col-6 col-md-4 col-xl-3 sva-stat">
         <span class="sva-stat__num">35</span>
-        <p class="sva-stat__label">Lead Investments</p>
+        <p class="sva-stat__label">{{ __('Lead Investments') }}</p>
       </div>
       <div class="col-6 col-md-4 col-xl-3 sva-stat">
         <span class="sva-stat__num">100+</span>
-        <p class="sva-stat__label">AI, Fintech &amp; Crypto</p>
+        <p class="sva-stat__label">{{ __('AI, Fintech & Crypto') }}</p>
       </div>
       <div class="col-6 col-md-4 col-xl-3 sva-stat">
         <span class="sva-stat__num">1,472+</span>
-        <p class="sva-stat__label">Other Sectors</p>
+        <p class="sva-stat__label">{{ __('Other Sectors') }}</p>
       </div>
     </div>
   </div>
@@ -84,10 +84,10 @@
 <section class="sva-section sva-section--dark">
   <div class="container">
     <div class="text-center mb-5">
-      <span class="sva-eyebrow">Our History</span>
-      <h2 class="sva-h2" style="color:#fff;">Pushing progress over time</h2>
+      <span class="sva-eyebrow">{{ __('Our History') }}</span>
+      <h2 class="sva-h2" style="color:#fff;">{{ __('Pushing progress over time') }}</h2>
       <p style="color:rgba(255,255,255,.6);font-size:1.1rem;max-width:560px;margin:0 auto;">
-        From Ron Conway's first angel investments to backing the defining companies of the AI era.
+        {{ __('From Ron Conway\'s first angel investments to backing the defining companies of the AI era.') }}
       </p>
     </div>
 
@@ -122,14 +122,14 @@
         <div class="sva-tl-wrap">
           @php
           $milestones = [
-            ['year'=>'1994','title'=>'The Beginning','body'=>'Ron Conway begins angel investing in Silicon Valley, backing early-stage technology founders with capital and hands-on support.'],
-            ['year'=>'1998','title'=>'Early Internet Wave','body'=>'First major technology investments including Google. Establishes a reputation for founder-first investing and deep operator networks.'],
-            ['year'=>'2009','title'=>'SV Angel Founded','body'=>'SV Angel is formally established as a seed fund, codifying Ron\'s hyper-engaged investing style into a team-driven platform.'],
-            ['year'=>'2012','title'=>'Portfolio Reaches Scale','body'=>'Investments in Airbnb, Pinterest, Twitter, Stripe and dozens more define SV Angel as the most connected seed fund in Silicon Valley.'],
-            ['year'=>'2016','title'=>'Growth Fund Launched','body'=>'SV Angel expands its strategy with a dedicated Growth fund to support portfolio companies as they scale beyond seed stage.'],
-            ['year'=>'2020','title'=>'Historic Exits','body'=>'Airbnb and DoorDash go public on the same day — two landmark portfolio exits representing decades of founder partnership.'],
-            ['year'=>'2023','title'=>'Leading the AI Era','body'=>'Early investments in OpenAI, Anthropic, ElevenLabs, and Sierra position SV Angel at the center of the artificial intelligence revolution.'],
-            ['year'=>'Now', 'title'=>'The Next 30 Years','body'=>'We look forward to the next 30 years of SV Angel, supporting you and future generations of founders.','now'=>true],
+            ['year'=>'1994','title'=>__('The Beginning'),'body'=>__('Ron Conway begins angel investing in Silicon Valley, backing early-stage technology founders with capital and hands-on support.')],
+            ['year'=>'1998','title'=>__('Early Internet Wave'),'body'=>__('First major technology investments including Google. Establishes a reputation for founder-first investing and deep operator networks.')],
+            ['year'=>'2009','title'=>__('SV Angel Founded'),'body'=>__('SV Angel is formally established as a seed fund, codifying Ron\'s hyper-engaged investing style into a team-driven platform.')],
+            ['year'=>'2012','title'=>__('Portfolio Reaches Scale'),'body'=>__('Investments in Airbnb, Pinterest, Twitter, Stripe and dozens more define SV Angel as the most connected seed fund in Silicon Valley.')],
+            ['year'=>'2016','title'=>__('Growth Fund Launched'),'body'=>__('SV Angel expands its strategy with a dedicated Growth fund to support portfolio companies as they scale beyond seed stage.')],
+            ['year'=>'2020','title'=>__('Historic Exits'),'body'=>__('Airbnb and DoorDash go public on the same day — two landmark portfolio exits representing decades of founder partnership.')],
+            ['year'=>'2023','title'=>__('Leading the AI Era'),'body'=>__('Early investments in OpenAI, Anthropic, ElevenLabs, and Sierra position SV Angel at the center of the artificial intelligence revolution.')],
+            ['year'=>__('Now'), 'title'=>__('The Next 30 Years'),'body'=>__('We look forward to the next 30 years of SV Angel, supporting you and future generations of founders.'),'now'=>true],
           ];
           @endphp
           @foreach($milestones as $m)

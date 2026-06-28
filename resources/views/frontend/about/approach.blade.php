@@ -5,9 +5,9 @@
 
 <section class="sva-page-hero" style="padding-bottom:60px;">
   <div class="container text-center" style="max-width:720px;">
-    <span class="sva-eyebrow">Philosophy</span>
-    <h1 class="sva-page-title">Built on Principle</h1>
-    <p class="sva-lead sva-lead--light" style="margin:0 auto;">Principles guiding our investment partnerships.</p>
+    <span class="sva-eyebrow">{{ __('Philosophy') }}</span>
+    <h1 class="sva-page-title">{{ __('Built on Principle') }}</h1>
+    <p class="sva-lead sva-lead--light" style="margin:0 auto;">{{ __('Principles guiding our investment partnerships.') }}</p>
   </div>
 </section>
 

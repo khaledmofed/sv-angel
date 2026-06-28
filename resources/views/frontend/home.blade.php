@@ -239,7 +239,7 @@
 <section class="mission-statement section-space" data-background="{{ $missionBg }}">
   <div class="container">
     <div class="mission-statement__top wow fade-in-bottom" data-wow-delay="600ms">
-      <h2 class="sub-title">{{ $missionTitle }}</h2>
+      <h2 class="sub-title">{{ __($missionTitle) }}</h2>
       <!-- <div class="mission-statement__item wow fade-in-bottom" data-wow-delay="600ms">
         <h2 class="title">{{ $missionHead }}</h2>
       </div> -->
@@ -251,19 +251,19 @@
         <div class="row mb-minus-30 mb-3">
           <div class="col-lg-4 col-md-6">
             <div class="mission-fact-box mission-fact-box--gold">
-              <p class="desc">Total Funded (USD)</p>
+              <p class="desc">{{ __('Total Funded (USD)') }}</p>
               <h4>${{ setting('stat_funded','599.4') }}B+</h4>
             </div>
           </div>
           <div class="col-lg-4 col-md-6">
             <div class="mission-fact-box mission-fact-box--dark">
-              <p class="desc">Total Investments</p>
+              <p class="desc">{{ __('Total Investments') }}</p>
               <h4><span class="odometer" data-count="{{ setting('stat_investments_count','1572') }}">0</span>+</h4>
             </div>
           </div>
           <div class="col-lg-4 col-md-6">
             <div class="mission-fact-box">
-              <p class="desc">Funds Raised</p>
+              <p class="desc">{{ __('Funds Raised') }}</p>
               <h4><span class="odometer" data-count="{{ setting('stat_funds_raised','11') }}">0</span>+</h4>
             </div>
           </div>
@@ -272,25 +272,25 @@
         <div class="row mb-minus-30">
           <div class="col-lg-3 col-md-6">
             <div class="mission-fact-box mission-fact-box--dark">
-              <p class="desc">Diversity Investments</p>
+              <p class="desc">{{ __('Diversity Investments') }}</p>
               <h4><span class="odometer" data-count="{{ setting('stat_diversity_investments','290') }}">0</span></h4>
             </div>
           </div>
           <div class="col-lg-3 col-md-6">
             <div class="mission-fact-box mission-fact-box--gold">
-              <p class="desc">Exits</p>
+              <p class="desc">{{ __('Exits') }}</p>
               <h4><span class="odometer" data-count="{{ setting('stat_exits','513') }}">0</span></h4>
             </div>
           </div>
           <div class="col-lg-3 col-md-6">
             <div class="mission-fact-box">
-              <p class="desc">Lead Investments</p>
+              <p class="desc">{{ __('Lead Investments') }}</p>
               <h4><span class="odometer" data-count="{{ setting('stat_lead_investments','35') }}">0</span></h4>
             </div>
           </div>
           <div class="col-lg-3 col-md-6">
             <div class="mission-fact-box mission-fact-box--dark">
-              <p class="desc">AI, Fintech &amp; Crypto</p>
+              <p class="desc">{{ __('AI, Fintech & Crypto') }}</p>
               <h4><span class="odometer" data-count="{{ setting('stat_ai_fintech_crypto','100') }}">0</span>+</h4>
             </div>
           </div>
@@ -305,8 +305,8 @@
   <div class="container">
     <div class="section-2-title-wrapper wow fade-in-bottom" data-wow-delay="600ms">
       <div class="section-2__top">
-        <h2 class="left-sub-title">Our Story</h2>
-        <h2 class="right-sub-title">Who We Are</h2>
+        <h2 class="left-sub-title">{{ __('Our Story') }}</h2>
+        <h2 class="right-sub-title">{{ __('Who We Are') }}</h2>
       </div>
       <!-- <div class="section-2__bottom">
         <h3 class="title">Three decades of backing the world's most transformative founders.</h3>
@@ -357,7 +357,7 @@
       </div>
       <p class="sva-timeline__year">Now</p>
     </div>
-    <p class="sva-timeline__caption">We look forward to the next 30 years of SV Angel, supporting you and future generations of founders.</p>
+    <p class="sva-timeline__caption">{{ __('We look forward to the next 30 years of SV Angel, supporting you and future generations of founders.') }}</p>
     {{-- End Timeline Wave --}}
 
     <div class="our-services__wrapper section-space-top">
@@ -430,12 +430,12 @@
   <div class="container">
     <div class="section-2-title-wrapper wow fade-in-bottom" data-wow-delay="600ms">
       <div class="section-2__top">
-        <h2 class="left-sub-title">Featured Portfolio</h2>
+        <h2 class="left-sub-title">{{ __('Featured Portfolio') }}</h2>
         <h2 class="right-sub-title">©1992 — {{ date('Y') }}</h2>
       </div>
       <div class="section-2__bottom">
-        <h3 class="title">World-changing companies start with meaningful relationships.</h3>
-        <a href="{{ route('portfolio') }}" class="btn-primary">View All</a>
+        <h3 class="title">{{ __('World-changing companies start with meaningful relationships.') }}</h3>
+        <a href="{{ route('portfolio') }}" class="btn-primary">{{ __('View All') }}</a>
       </div>
     </div>
     <div class="featured-product-wrapper section-space-top">
@@ -495,7 +495,7 @@
 <section class="clients-3 section-space-top">
   <div class="container">
     <div class="section-heading__title">
-      <h2 class="title rr-title-anim">What Our Founders Say</h2>
+      <h2 class="title rr-title-anim">{{ __('What Our Founders Say') }}</h2>
     </div>
     <div class="clients-3__inner">
 
@@ -623,9 +623,9 @@
   <div class="container">
     <div class="sva-inflection__grid">
       <div class="sva-inflection__text">
-        <h2 class="sva-inflection__title">Inflection points</h2>
-        <p class="sva-inflection__desc">Some of our most impactful work happens at moments where a single decision or connection can dictate the course of a company. We're ready to advise at a moment's notice, helping remove any roadblocks on the path to success.</p>
-        <a href="{{ route('contact') }}" class="btn-primary">Reach Out to Us</a>
+        <h2 class="sva-inflection__title">{{ __('Inflection points') }}</h2>
+        <p class="sva-inflection__desc">{{ __('Some of our most impactful work happens at moments where a single decision or connection can dictate the course of a company. We\'re ready to advise at a moment\'s notice, helping remove any roadblocks on the path to success.') }}</p>
+        <a href="{{ route('contact') }}" class="btn-primary">{{ __('Reach Out to Us') }}</a>
       </div>
       <div class="sva-inflection__video">
         <video autoplay muted loop playsinline>

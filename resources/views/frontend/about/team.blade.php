@@ -5,9 +5,9 @@
 
 <section class="sva-page-hero" style="padding-bottom:60px;">
   <div class="container text-center" style="max-width:620px;">
-    <span class="sva-eyebrow">The Team</span>
-    <h1 class="sva-page-title">Dedicated to founders</h1>
-    <p class="sva-lead sva-lead--light" style="margin:0 auto;">Small team. Decades of experience.</p>
+    <span class="sva-eyebrow">{{ __('The Team') }}</span>
+    <h1 class="sva-page-title">{{ __('Dedicated to founders') }}</h1>
+    <p class="sva-lead sva-lead--light" style="margin:0 auto;">{{ __('Small team. Decades of experience.') }}</p>
   </div>
 </section>
 
