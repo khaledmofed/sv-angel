@@ -6,7 +6,7 @@
 <section class="sva-page-hero" style="padding-bottom:60px;">
   <div class="container text-center" style="max-width:600px;">
     <span class="sva-eyebrow">FAQ</span>
-    <h1 class="sva-page-title">Frequently Asked Questions</h1>
+    <h1 class="sva-page-title">{{ __('Frequently Asked Questions') }}</h1>
   </div>
 </section>
 

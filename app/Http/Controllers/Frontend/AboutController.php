@@ -28,7 +28,10 @@ class AboutController extends Controller
 
     public function faq()
     {
-        $faqs = Faq::where('is_active', true)->orderBy('order')->get();
+        $faqs = Faq::where('is_active', true)->where('lang', app()->getLocale())->orderBy('order')->get();
+        if ($faqs->isEmpty()) {
+            $faqs = Faq::where('is_active', true)->where('lang', 'en')->orderBy('order')->get();
+        }
         return view('frontend.faq', compact('faqs'));
     }
 }

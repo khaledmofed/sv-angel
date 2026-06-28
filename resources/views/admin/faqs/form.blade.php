@@ -4,6 +4,14 @@
 <div class="card p-4" style="max-width:700px">
   <form method="POST" action="{{ $faq->id ? route('admin.faqs.update',$faq) : route('admin.faqs.store') }}">
     @csrf @if($faq->id) @method('PUT') @endif
+    <div class="mb-3">
+      <label class="form-label fw-semibold">Language *</label>
+      <select name="lang" class="form-select" required>
+        @foreach(['en'=>'🇺🇸 English','ja'=>'🇯🇵 日本語','ko'=>'🇰🇷 한국어','es'=>'🇪🇸 Español','zh-TW'=>'🇹🇼 繁體中文','vi'=>'🇻🇳 Tiếng Việt'] as $code=>$label)
+        <option value="{{ $code }}" {{ old('lang',$faq->lang??'en')===$code?'selected':'' }}>{{ $label }}</option>
+        @endforeach
+      </select>
+    </div>
     <div class="mb-3"><label class="form-label fw-semibold">Question *</label><input type="text" name="question" class="form-control" value="{{ old('question',$faq->question) }}" required></div>
     <div class="mb-3"><label class="form-label fw-semibold">Answer *</label><textarea name="answer" class="form-control" rows="4" required>{{ old('answer',$faq->answer) }}</textarea></div>
     <div class="row mb-3">

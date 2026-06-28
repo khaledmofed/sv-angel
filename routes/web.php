@@ -25,6 +25,15 @@ use App\Http\Controllers\Admin\MessageController;
 use App\Http\Controllers\Admin\MissionController;
 use App\Http\Controllers\Admin\AboutStoryController;
 
+// ─── Language Switcher ───────────────────────────────────────
+Route::get('/lang/{locale}', function (string $locale) {
+    $supported = ['en', 'ja', 'ko', 'es', 'zh-TW', 'vi'];
+    if (in_array($locale, $supported)) {
+        session(['locale' => $locale]);
+    }
+    return redirect()->back()->withHeaders(['Vary' => 'Accept-Language']);
+})->name('lang.switch');
+
 // ─── Frontend ────────────────────────────────────────────────
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/portfolio', [PortfolioController::class, 'index'])->name('portfolio');

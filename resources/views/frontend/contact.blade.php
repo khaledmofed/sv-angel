@@ -5,9 +5,9 @@
 
 <section class="sva-page-hero" style="padding-bottom:60px;">
   <div class="container" style="max-width:700px;">
-    <span class="sva-eyebrow">Reach Out</span>
-    <h1 class="sva-page-title">Get in Touch</h1>
-    <p class="sva-lead sva-lead--light">We read every message and respond to those that align with our investment thesis.</p>
+    <span class="sva-eyebrow">{{ __('Reach Out') }}</span>
+    <h1 class="sva-page-title">{{ __('Get in Touch') }}</h1>
+    <p class="sva-lead sva-lead--light">{{ __('We read every message and respond to those that align with our investment thesis.') }}</p>
   </div>
 </section>
 
@@ -44,25 +44,25 @@
         <form method="POST" action="{{ route('contact.store') }}">
           @csrf
           <div class="mb-4">
-            <input type="text" name="name" placeholder="Your Name" value="{{ old('name') }}"
+            <input type="text" name="name" placeholder="{{ __('Your Name') }}" value="{{ old('name') }}"
                    class="sva-field @error('name') is-invalid @enderror">
             @error('name')<div class="invalid-feedback" style="display:block;color:#d03238;font-size:13px;margin-top:6px;">{{ $message }}</div>@enderror
           </div>
           <div class="mb-4">
-            <input type="email" name="email" placeholder="Email Address" value="{{ old('email') }}"
+            <input type="email" name="email" placeholder="{{ __('Email Address') }}" value="{{ old('email') }}"
                    class="sva-field @error('email') is-invalid @enderror">
             @error('email')<div class="invalid-feedback" style="display:block;color:#d03238;font-size:13px;margin-top:6px;">{{ $message }}</div>@enderror
           </div>
           <div class="mb-4">
-            <input type="text" name="subject" placeholder="Subject" value="{{ old('subject') }}"
+            <input type="text" name="subject" placeholder="{{ __('Subject') }}" value="{{ old('subject') }}"
                    class="sva-field">
           </div>
           <div class="mb-5">
-            <textarea name="message" placeholder="Your Message" rows="6"
+            <textarea name="message" placeholder="{{ __('Your Message') }}" rows="6"
                       class="sva-field @error('message') is-invalid @enderror" style="resize:vertical;">{{ old('message') }}</textarea>
             @error('message')<div class="invalid-feedback" style="display:block;color:#d03238;font-size:13px;margin-top:6px;">{{ $message }}</div>@enderror
           </div>
-          <button type="submit" class="sva-btn sva-btn--gold">Send Message</button>
+          <button type="submit" class="sva-btn sva-btn--gold">{{ __('Send Message') }}</button>
         </form>
       </div>
     </div>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_','-',app()->getLocale()) }}">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -104,31 +104,32 @@
           <div class="header__nav">
             <nav class="main-menu">
               <ul>
-                <li class="{{ request()->is('/') ? 'active' : '' }}"><a href="{{ route('home') }}">Home</a></li>
+                <li class="{{ request()->is('/') ? 'active' : '' }}"><a href="{{ route('home') }}">{{ __('Home') }}</a></li>
                 <li class="menu-item-has-children {{ request()->is('portfolio*') ? 'active' : '' }}">
-                  <a href="{{ route('portfolio') }}">Portfolio</a>
+                  <a href="{{ route('portfolio') }}">{{ __('Portfolio') }}</a>
                   <ul class="dp-menu">
-                    <li><a href="{{ route('portfolio') }}">Overview</a></li>
-                    <li><a href="{{ route('portfolio') }}?stage=Seed">Seed</a></li>
-                    <li><a href="{{ route('portfolio') }}?stage=Growth">Growth</a></li>
+                    <li><a href="{{ route('portfolio') }}">{{ __('Overview') }}</a></li>
+                    <li><a href="{{ route('portfolio') }}?stage=Seed">{{ __('Seed') }}</a></li>
+                    <li><a href="{{ route('portfolio') }}?stage=Growth">{{ __('Growth') }}</a></li>
                   </ul>
                 </li>
                 <li class="menu-item-has-children {{ request()->is('about*') ? 'active' : '' }}">
-                  <a href="{{ route('about') }}">About</a>
+                  <a href="{{ route('about') }}">{{ __('About') }}</a>
                   <ul class="dp-menu">
-                    <li><a href="{{ route('about') }}">Overview</a></li>
-                    <li><a href="{{ route('about.approach') }}">Approach</a></li>
-                    <li><a href="{{ route('about.team') }}">Team</a></li>
-                    <li><a href="{{ route('faq') }}">FAQ</a></li>
+                    <li><a href="{{ route('about') }}">{{ __('Overview') }}</a></li>
+                    <li><a href="{{ route('about.approach') }}">{{ __('Approach') }}</a></li>
+                    <li><a href="{{ route('about.team') }}">{{ __('Team') }}</a></li>
+                    <li><a href="{{ route('faq') }}">{{ __('FAQ') }}</a></li>
                   </ul>
                 </li>
-                <li class="{{ request()->is('blog*') ? 'active' : '' }}"><a href="{{ route('blog') }}">Insights</a></li>
-                <li class="{{ request()->is('contact*') ? 'active' : '' }}"><a href="{{ route('contact') }}">Contact</a></li>
+                <li class="{{ request()->is('blog*') ? 'active' : '' }}"><a href="{{ route('blog') }}">{{ __('Insights') }}</a></li>
+                <li class="{{ request()->is('contact*') ? 'active' : '' }}"><a href="{{ route('contact') }}">{{ __('Contact') }}</a></li>
               </ul>
             </nav>
           </div>
-          <div class="header__button">
-            <a href="{{ route('contact') }}" class="btn-primary">Get In Touch</a>
+          <div class="header__button d-flex align-items-center gap-3">
+            @include('partials.lang-switcher')
+            <a href="{{ route('contact') }}" class="btn-primary">{{ __('Get In Touch') }}</a>
           </div>
           <div class="header__navicon d-xl-none">
             <button class="side-toggle"><i class="fa-solid fa-bars"></i></button>
@@ -151,7 +152,7 @@
           <div class="container">
             <div class="footer-cta">
               <h2 class="footer-cta-title wow fade-in-bottom" data-wow-delay="600ms">
-                Let's start Something Great Together
+                {{ __("Let's start Something Great Together") }}
               </h2>
             </div>
             <div class="footer-widget-wrapper-box">
@@ -165,24 +166,24 @@
                   </div>
                 </div>
                 <div class="footer-widget-box">
-                  <h2 class="title">Portfolio</h2>
+                  <h2 class="title">{{ __('Portfolio') }}</h2>
                   <ul class="footer-nav-list">
-                    <li><a href="{{ route('portfolio') }}">Overview</a></li>
-                    <li><a href="{{ route('portfolio') }}?stage=Seed">Seed</a></li>
-                    <li><a href="{{ route('portfolio') }}?stage=Growth">Growth</a></li>
+                    <li><a href="{{ route('portfolio') }}">{{ __('Overview') }}</a></li>
+                    <li><a href="{{ route('portfolio') }}?stage=Seed">{{ __('Seed') }}</a></li>
+                    <li><a href="{{ route('portfolio') }}?stage=Growth">{{ __('Growth') }}</a></li>
                   </ul>
                 </div>
                 <div class="footer-widget-box">
-                  <h2 class="title">About</h2>
+                  <h2 class="title">{{ __('About') }}</h2>
                   <ul class="footer-nav-list">
-                    <li><a href="{{ route('about') }}">Overview</a></li>
-                    <li><a href="{{ route('about.approach') }}">Approach</a></li>
-                    <li><a href="{{ route('about.team') }}">Team</a></li>
-                    <li><a href="{{ route('faq') }}">FAQ</a></li>
+                    <li><a href="{{ route('about') }}">{{ __('Overview') }}</a></li>
+                    <li><a href="{{ route('about.approach') }}">{{ __('Approach') }}</a></li>
+                    <li><a href="{{ route('about.team') }}">{{ __('Team') }}</a></li>
+                    <li><a href="{{ route('faq') }}">{{ __('FAQ') }}</a></li>
                   </ul>
                 </div>
                 <div class="footer-widget-box">
-                  <h2 class="title">Connect</h2>
+                  <h2 class="title">{{ __('Connect') }}</h2>
                   <ul class="footer-socail">
                     @if(setting('social_linkedin'))<li><a href="{{ setting('social_linkedin') }}" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>@endif
                     @if(setting('social_twitter'))<li><a href="{{ setting('social_twitter') }}" target="_blank"><i class="fa-brands fa-x-twitter"></i> X Twitter</a></li>@endif

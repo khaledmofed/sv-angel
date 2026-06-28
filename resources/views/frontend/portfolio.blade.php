@@ -6,8 +6,8 @@
 <section class="sva-page-hero" style="padding-bottom:60px;">
   <div class="container text-center" style="max-width:680px;">
     <span class="sva-eyebrow">Investments</span>
-    <h1 class="sva-page-title">Our Portfolio</h1>
-    <p class="sva-lead sva-lead--light" style="margin:0 auto;">World-changing companies start with meaningful relationships.</p>
+    <h1 class="sva-page-title">{{ __('Our Portfolio') }}</h1>
+    <p class="sva-lead sva-lead--light" style="margin:0 auto;">{{ __('World-changing companies start with meaningful relationships.') }}</p>
   </div>
 </section>
 
@@ -16,19 +16,17 @@
 
     {{-- Filters --}}
     <div class="d-flex flex-wrap gap-2 justify-content-center mb-3">
-      <button class="sva-filter-pill active" data-filter="all">All</button>
-      <button class="sva-filter-pill" data-filter="AI">AI</button>
-      <!-- <button class="sva-filter-pill" data-filter="Consumer">Consumer</button> -->
-      <button class="sva-filter-pill" data-filter="Crypto">Crypto</button>
-      <!-- <button class="sva-filter-pill" data-filter="Enterprise">Enterprise</button> -->
-      <button class="sva-filter-pill" data-filter="Fintech">Fintech</button>
+      <button class="sva-filter-pill active" data-filter="all">{{ __('All') }}</button>
+      <button class="sva-filter-pill" data-filter="AI">{{ __('AI') }}</button>
+      <button class="sva-filter-pill" data-filter="Crypto">{{ __('Crypto') }}</button>
+      <button class="sva-filter-pill" data-filter="Fintech">{{ __('Fintech') }}</button>
       <!-- <button class="sva-filter-pill" data-filter="Healthcare">Healthcare + Bio</button>
       <button class="sva-filter-pill" data-filter="Marketplaces">Marketplaces</button> -->
     </div>
     <div class="d-flex gap-2 justify-content-center mb-5">
-      <button class="sva-filter-pill active" data-stage="all">All Stages</button>
-      <button class="sva-filter-pill" data-stage="Seed">Seed</button>
-      <button class="sva-filter-pill" data-stage="Growth">Growth</button>
+      <button class="sva-filter-pill active" data-stage="all">{{ __('All Stages') }}</button>
+      <button class="sva-filter-pill" data-stage="Seed">{{ __('Seed') }}</button>
+      <button class="sva-filter-pill" data-stage="Growth">{{ __('Growth') }}</button>
     </div>
 
     {{-- Grid --}}
