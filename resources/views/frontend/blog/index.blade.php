@@ -5,9 +5,9 @@
 
 <section class="sva-page-hero" style="padding-bottom:60px;">
   <div class="container" style="max-width:700px;">
-    <span class="sva-eyebrow">Insights</span>
-    <h1 class="sva-page-title">Ideas & Perspectives</h1>
-    <p class="sva-lead sva-lead--light">Thinking from the SV Angel team on startups, technology, and the future.</p>
+    <span class="sva-eyebrow">{{ __('Insights') }}</span>
+    <h1 class="sva-page-title">{{ __('Ideas & Perspectives') }}</h1>
+    <p class="sva-lead sva-lead--light">{{ __('Thinking from the SV Angel team on startups, technology, and the future.') }}</p>
   </div>
 </section>
 
@@ -30,7 +30,7 @@
               <a href="{{ route('blog.show', $post->slug) }}">{{ $post->title }}</a>
             </h3>
             <p class="sva-blog-card__excerpt">{{ Str::limit($post->excerpt, 100) }}</p>
-            <a href="{{ route('blog.show', $post->slug) }}" class="sva-blog-card__link">Read More</a>
+            <a href="{{ route('blog.show', $post->slug) }}" class="sva-blog-card__link">{{ __('Read More') }}</a>
           </div>
         </div>
       </div>

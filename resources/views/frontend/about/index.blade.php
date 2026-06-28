@@ -195,10 +195,10 @@ document.addEventListener('DOMContentLoaded', function () {
   <div class="container">
     <div class="row align-items-center g-5">
       <div class="col-lg-7">
-        <span class="sva-eyebrow">Giving Back</span>
-        <h2 class="sva-h2">Building a better world</h2>
-        <p class="sva-lead" style="margin-bottom:24px;">A primary motivator for our work is to shape a more just and equitable society. At SV Angel, we support causes including racial justice, access to healthcare, and reducing income inequality and gun violence. We support The Giving Pledge, and we helped launch sf.citi to leverage the collective power of the tech sector as a force for civic action in San Francisco. When founders join our network, we strongly encourage them to contribute to the betterment of the world around us.</p>
-        <a href="https://pledge1percent.org/" target="_blank" rel="noopener noreferrer" class="sva-btn sva-btn--dark">Join Pledge 1%</a>
+        <span class="sva-eyebrow">{{ __('Giving Back') }}</span>
+        <h2 class="sva-h2">{{ __('Building a better world') }}</h2>
+        <p class="sva-lead" style="margin-bottom:24px;">{{ __('A primary motivator for our work is to shape a more just and equitable society. At SV Angel, we support causes including racial justice, access to healthcare, and reducing income inequality and gun violence. We support The Giving Pledge, and we helped launch sf.citi to leverage the collective power of the tech sector as a force for civic action in San Francisco. When founders join our network, we strongly encourage them to contribute to the betterment of the world around us.') }}</p>
+        <a href="https://pledge1percent.org/" target="_blank" rel="noopener noreferrer" class="sva-btn sva-btn--dark">{{ __('Join Pledge 1%') }}</a>
       </div>
       <div class="col-lg-5">
         <div class="row g-3">
@@ -222,12 +222,12 @@ document.addEventListener('DOMContentLoaded', function () {
         <img src="{{ asset('storage/about/team_meeting.jpg') }}" alt="SV Angel Team" class="sva-img" style="max-height:500px;object-fit:cover;">
       </div>
       <div class="col-lg-6">
-        <span class="sva-eyebrow">The Future</span>
-        <h2 class="sva-h2" style="color:#fff;">Our work is never finished</h2>
-        <p class="sva-lead sva-lead--light" style="margin-bottom:32px;">We're proud of our history, and we're even more excited about the future. As the pace of change continues to accelerate, we're tracking each new sector as well as the bright minds leading the charge. Here's what doesn't change: we're here in service of founders, upholding a moral standard in the ecosystem to ensure that technology is a force for good.</p>
+        <span class="sva-eyebrow">{{ __('The Future') }}</span>
+        <h2 class="sva-h2" style="color:#fff;">{{ __('Our work is never finished') }}</h2>
+        <p class="sva-lead sva-lead--light" style="margin-bottom:32px;">{{ __("We're proud of our history, and we're even more excited about the future. As the pace of change continues to accelerate, we're tracking each new sector as well as the bright minds leading the charge. Here's what doesn't change: we're here in service of founders, upholding a moral standard in the ecosystem to ensure that technology is a force for good.") }}</p>
         <div class="d-flex gap-3 flex-wrap">
-          <a href="{{ route('about.approach') }}" class="btn-primary">Our Approach</a>
-          <a href="{{ route('portfolio') }}"       class="sva-btn sva-btn--outline-light">View Portfolio</a>
+          <a href="{{ route('about.approach') }}" class="btn-primary">{{ __('Our Approach') }}</a>
+          <a href="{{ route('portfolio') }}"       class="sva-btn sva-btn--outline-light">{{ __('View Portfolio') }}</a>
         </div>
       </div>
     </div>

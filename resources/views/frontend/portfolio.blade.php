@@ -5,7 +5,7 @@
 
 <section class="sva-page-hero" style="padding-bottom:60px;">
   <div class="container text-center" style="max-width:680px;">
-    <span class="sva-eyebrow">Investments</span>
+    <span class="sva-eyebrow">{{ __('Investments') }}</span>
     <h1 class="sva-page-title">{{ __('Our Portfolio') }}</h1>
     <p class="sva-lead sva-lead--light" style="margin:0 auto;">{{ __('World-changing companies start with meaningful relationships.') }}</p>
   </div>

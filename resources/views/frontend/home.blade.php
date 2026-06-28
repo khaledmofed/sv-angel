@@ -355,7 +355,7 @@
         </div>
         <div class="sva-timeline__dot"></div>
       </div>
-      <p class="sva-timeline__year">Now</p>
+      <p class="sva-timeline__year">{{ __('Now') }}</p>
     </div>
     <p class="sva-timeline__caption">{{ __('We look forward to the next 30 years of SV Angel, supporting you and future generations of founders.') }}</p>
     {{-- End Timeline Wave --}}
@@ -668,7 +668,7 @@
 <section class="insights theme-bg-light section-space">
   <div class="container-fluid">
     <div class="section-title-wrapper wow fade-in-bottom" data-wow-delay="600ms">
-      <h2 class="title">Our <span> efforts at </span> work</h2>
+      <h2 class="title">{!! __('Our <span>efforts at</span> work') !!}</h2>
     </div>
   </div>
   <div class="container">
