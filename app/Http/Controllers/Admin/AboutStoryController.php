@@ -9,6 +9,20 @@ use Illuminate\Support\Facades\Storage;
 
 class AboutStoryController extends Controller
 {
+    private array $locales = ['ja', 'ko', 'es', 'zh-TW', 'vi'];
+
+    private function mergeTranslations(AboutStory $story, Request $request): array
+    {
+        $translations = $story->translations ?? [];
+        foreach ($this->locales as $locale) {
+            $t = $request->input("translations.$locale", []);
+            if (array_filter($t)) {
+                $translations[$locale] = array_merge($translations[$locale] ?? [], array_filter($t));
+            }
+        }
+        return $translations;
+    }
+
     public function index()
     {
         $stories = AboutStory::orderBy('order')->get();
@@ -43,6 +57,7 @@ class AboutStoryController extends Controller
             $data['second_image'] = $request->file('second_image')->store('about_stories', 'public');
         }
         $data['is_active'] = $request->boolean('is_active');
+        $data['translations'] = $this->mergeTranslations(new AboutStory(), $request);
 
         AboutStory::create($data);
         return redirect()->route('admin.about-stories.index')->with('success', 'Story created!');
@@ -82,6 +97,7 @@ class AboutStoryController extends Controller
             unset($data['second_image']);
         }
         $data['is_active'] = $request->boolean('is_active');
+        $data['translations'] = $this->mergeTranslations($aboutStory, $request);
 
         $aboutStory->update($data);
         return redirect()->route('admin.about-stories.index')->with('success', 'Story updated!');

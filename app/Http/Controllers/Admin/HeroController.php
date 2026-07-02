@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 
 class HeroController extends Controller
 {
+    private array $locales = ['ja', 'ko', 'es', 'zh-TW', 'vi'];
+
     public function edit()
     {
         $hero = Hero::first() ?? new Hero();
@@ -17,6 +19,7 @@ class HeroController extends Controller
     public function update(Request $request)
     {
         $data = $request->validate([
+            'title'       => 'nullable|string',
             'headline'    => 'required|string',
             'subheadline' => 'nullable|string',
             'description' => 'nullable|string',
@@ -33,6 +36,15 @@ class HeroController extends Controller
         } else {
             unset($data['bg_image']);
         }
+
+        $translations = $hero->translations ?? [];
+        foreach ($this->locales as $locale) {
+            $t = $request->input("translations.$locale", []);
+            if (array_filter($t)) {
+                $translations[$locale] = array_merge($translations[$locale] ?? [], array_filter($t));
+            }
+        }
+        $data['translations'] = $translations;
 
         $hero->fill($data)->save();
 

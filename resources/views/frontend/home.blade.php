@@ -17,11 +17,12 @@
     display: flex;
     align-items: center;
     height: 100%;
+        justify-content: center;
 ">
       <div class="hero-2__inner">
         <div class="hero-2__content">
           <div class="hero-2-title-wrapper">
-            <h1 class="title">{{ setting('site_name','SV Angel') }}</h1>
+            <h1 class="title">{!! $hero->translate('title') !!}</h1>
             <div class="sva-timeline__line timeline-hero">
 
         <div class="sva-timeline__wave">
@@ -40,12 +41,12 @@
           </div>
           <div class="hero-2-wrapper">
 
-            <h2 class="sub-title">{!! $hero->headline !!}
+            <h2 class="sub-title">{!! $hero->translate('headline') !!}
                 <!-- <img class="circle" src="assets/img/hero/hero-shape.png" alt="image"> -->
             </h2>
-           <p>{{ $hero->description }}</p></div>
+           <p>{{ $hero->translate('description') }}</p></div>
           @if($hero->cta_text)
-          <a href="{{ $hero->cta_url }}" class="btn-primary mt-4">{{ $hero->cta_text }}</a>
+          <a href="{{ $hero->cta_url }}" class="btn-primary mt-4">{{ $hero->translate('cta_text') }}</a>
           @endif
         </div>
       </div>
@@ -116,7 +117,9 @@
   $missionBg    = setting('mission_bg_image', '/assets/img/our-services/mission-statement-bg.png');
   $missionTitle = setting('mission_title', 'Built on principle');
   $missionHead  = setting('mission_headline', setting('site_tagline','Advocates for founders.'));
-  $missionDesc  = setting('mission_description', 'We have spent decades supporting transformative companies — investing long-term in founders as agents of positive change.');
+  $locale = app()->getLocale();
+  $missionDescEn = setting('mission_description', 'We have spent decades supporting transformative companies — investing long-term in founders as agents of positive change.');
+  $missionDesc = $locale !== 'en' ? setting('mission_description_'.$locale, $missionDescEn) : $missionDescEn;
   $missionVideo = setting('mission_video_url', '');
   $missionThumb = setting('mission_video_thumb', '');
 @endphp
@@ -364,7 +367,7 @@
       @foreach($aboutStories as $story)
       <div class="our-services__item wow fade-in-bottom" data-wow-delay="600ms">
         <div class="title-wrapper">
-          <h3 class="title rr-title-anim">{{ $story->title }} <span>/ {{ $story->number }}</span></h3>
+          <h3 class="title rr-title-anim">{{ $story->translate('title') }} <span>/ {{ $story->number }}</span></h3>
         </div>
         @if($story->second_image || $story->second_image_url || $story->second_image_link)
         <div class="our-services__media our-services__media--dual">
@@ -389,7 +392,7 @@
           <div class="our-services__media__img-link"><img src="{{ $img2 }}" alt="{{ $story->title }} 2"></div>
           @endif
           <div class="content">
-            @foreach(explode("\n\n", $story->description) as $para)
+            @foreach(explode("\n\n", $story->translate('description')) as $para)
             <p>{{ trim($para) }}</p>
             @endforeach
             @if($story->signature)
@@ -409,7 +412,7 @@
             @endif
           @endif
           <div class="content">
-            @foreach(explode("\n\n", $story->description) as $para)
+            @foreach(explode("\n\n", $story->translate('description')) as $para)
             <p>{{ trim($para) }}</p>
             @endforeach
             @if($story->signature)
@@ -560,10 +563,10 @@
                     <path d="M5.5405 44.6239C1.9355 40.7949 0 36.5004 0 29.5389C0 17.2889 8.5995 6.30936 21.105 0.880859L24.2305 5.70386C12.558 12.0179 10.276 20.2114 9.366 25.3774C11.2455 24.4044 13.706 24.0649 16.1175 24.2889C22.4315 24.8734 27.4085 30.0569 27.4085 36.5004C27.4085 39.7493 26.1179 42.8651 23.8206 45.1624C21.5232 47.4597 18.4074 48.7504 15.1585 48.7504C13.3618 48.7349 11.5861 48.362 9.93485 47.6536C8.28361 46.9451 6.78983 45.9152 5.5405 44.6239ZM40.5405 44.6239C36.9355 40.7949 35 36.5004 35 29.5389C35 17.2889 43.5995 6.30936 56.105 0.880859L59.2305 5.70386C47.558 12.0179 45.276 20.2114 44.366 25.3774C46.2455 24.4044 48.706 24.0649 51.1175 24.2889C57.4315 24.8734 62.4085 30.0569 62.4085 36.5004C62.4085 39.7493 61.1179 42.8651 58.8206 45.1624C56.5232 47.4597 53.4074 48.7504 50.1585 48.7504C48.3618 48.7349 46.5861 48.362 44.9348 47.6536C43.2836 46.9451 41.7898 45.9152 40.5405 44.6239Z" fill="#B3EC11"/>
                   </svg>
                 </div>
-                <p>"{{ $t->quote }}"</p>
+                <p>"{{ $t->translate('quote') }}"</p>
                 <div class="author">
                   <h2 class="name">{{ $t->author_name }}</h2>
-                  <span>{{ $t->author_title }}@if($t->author_company), {{ $t->author_company }}@endif</span>
+                  <span>{{ $t->translate('author_title') }}@if($t->author_company), {{ $t->author_company }}@endif</span>
                 </div>
               </div>
             </div>
@@ -687,10 +690,10 @@
         </div>
         <div class="insights__content">
           <ul class="insight-list">
-            <li><span>{{ $post->category }}</span>{{ $post->read_time }}</li>
+            <li><span>{{ __($post->category) }}</span>{{ __($post->read_time) }}</li>
           </ul>
           <h2 class="title rr-title-anim">
-            <a href="{{ $postUrl }}" @if($post->external_url) target="_blank" rel="noopener noreferrer" @endif>{{ $post->title }}</a>
+            <a href="{{ $postUrl }}" @if($post->external_url) target="_blank" rel="noopener noreferrer" @endif>{{ $post->translate('title') }}</a>
           </h2>
           <ul class="meta-list">
             <li>{{ $post->author }}</li>
@@ -698,7 +701,7 @@
           </ul>
         </div>
         <div class="insights__btn">
-          <a href="{{ $postUrl }}" @if($post->external_url) target="_blank" rel="noopener noreferrer" @endif class="btn-primary btn-black-2">{{ $post->read_time }} →</a>
+          <a href="{{ $postUrl }}" @if($post->external_url) target="_blank" rel="noopener noreferrer" @endif class="btn-primary btn-black-2">{{ __($post->read_time) }} →</a>
         </div>
       </div>
       @endforeach

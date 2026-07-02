@@ -27,8 +27,8 @@
           @endif
           <div class="sva-member__body">
             <p class="sva-member__name">{{ $member->name }}</p>
-            <p class="sva-member__role">{{ $member->title }}</p>
-            <p class="sva-member__bio">{{ Str::limit($member->bio, 100) }}</p>
+            <p class="sva-member__role">{{ $member->translate('title') }}</p>
+            <p class="sva-member__bio">{{ Str::limit($member->translate('bio'), 100) }}</p>
             <div class="sva-member__links d-flex gap-2">
               @if($member->twitter_url)
               <a href="{{ $member->twitter_url }}" target="_blank"><i class="fa-brands fa-x"></i></a>

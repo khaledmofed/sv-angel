@@ -162,7 +162,12 @@
                     <a class="logo" href="{{ route('home') }}">
                       <img src="{{ setting('site_logo_footer', setting('site_logo', '/assets/img/logo/sva-color.png')) }}" alt="{{ setting('site_name') }}" style="height:80px;width:auto;">
                     </a>
-                    <p>{{ setting('footer_about', 'SV Angel is a seed fund helping founders build great companies since 1992.') }}</p>
+                    @php
+                      $locale = app()->getLocale();
+                      $footerAboutEn = setting('footer_about', 'SV Angel is a seed fund helping founders build great companies since 1992.');
+                      $footerAbout = $locale !== 'en' ? setting('footer_about_'.$locale, $footerAboutEn) : $footerAboutEn;
+                    @endphp
+                    <p>{{ $footerAbout }}</p>
                   </div>
                 </div>
                 <div class="footer-widget-box">

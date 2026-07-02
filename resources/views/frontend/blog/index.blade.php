@@ -27,9 +27,9 @@
           <div class="sva-blog-card__body">
             <p class="sva-blog-card__meta">{{ $post->author }} · {{ $post->published_at?->format('d M Y') }} · {{ $post->read_time }}</p>
             <h3 class="sva-blog-card__title">
-              <a href="{{ route('blog.show', $post->slug) }}">{{ $post->title }}</a>
+              <a href="{{ route('blog.show', $post->slug) }}">{{ $post->translate('title') }}</a>
             </h3>
-            <p class="sva-blog-card__excerpt">{{ Str::limit($post->excerpt, 100) }}</p>
+            <p class="sva-blog-card__excerpt">{{ Str::limit($post->translate('excerpt'), 100) }}</p>
             <a href="{{ route('blog.show', $post->slug) }}" class="sva-blog-card__link">{{ __('Read More') }}</a>
           </div>
         </div>

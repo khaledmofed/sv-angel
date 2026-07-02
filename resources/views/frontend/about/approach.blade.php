@@ -18,7 +18,7 @@
       <div class="row align-items-start g-4">
         <div class="col-lg-4">
           <p class="sva-principle__num">{{ $p->number }}</p>
-          <h2 class="sva-principle__title">{{ $p->title }}</h2>
+          <h2 class="sva-principle__title">{{ $p->translate('title') }}</h2>
         </div>
         <div class="col-lg-8">
           @if($p->quote_text)
@@ -27,7 +27,7 @@
             <footer>— {{ $p->quote_author }}, <small style="color:var(--sva-mute);">{{ $p->quote_position }}</small></footer>
           </div>
           @endif
-          <p class="sva-lead">{{ $p->description }}</p>
+          <p class="sva-lead">{{ $p->translate('description') }}</p>
         </div>
       </div>
     </div>

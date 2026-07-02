@@ -8,6 +8,20 @@ use Illuminate\Http\Request;
 
 class PrincipleController extends Controller
 {
+    private array $locales = ['ja', 'ko', 'es', 'zh-TW', 'vi'];
+
+    private function mergeTranslations(Principle $principle, Request $request): array
+    {
+        $translations = $principle->translations ?? [];
+        foreach ($this->locales as $locale) {
+            $t = $request->input("translations.$locale", []);
+            if (array_filter($t)) {
+                $translations[$locale] = array_merge($translations[$locale] ?? [], array_filter($t));
+            }
+        }
+        return $translations;
+    }
+
     public function index()
     {
         $principles = Principle::orderBy('order')->get();
@@ -32,6 +46,7 @@ class PrincipleController extends Controller
             'is_active'      => 'boolean',
         ]);
         $data['is_active'] = $request->boolean('is_active');
+        $data['translations'] = $this->mergeTranslations(new Principle(), $request);
         Principle::create($data);
         return redirect()->route('admin.principles.index')->with('success', 'Principle created!');
     }
@@ -54,6 +69,7 @@ class PrincipleController extends Controller
             'is_active'      => 'boolean',
         ]);
         $data['is_active'] = $request->boolean('is_active');
+        $data['translations'] = $this->mergeTranslations($principle, $request);
         $principle->update($data);
         return redirect()->route('admin.principles.index')->with('success', 'Principle updated!');
     }

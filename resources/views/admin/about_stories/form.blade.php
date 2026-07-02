@@ -1,5 +1,16 @@
 @extends('layouts.admin')
 @section('title', $story->id ? 'Edit Story' : 'New Story')
+
+@php
+$locales = [
+    'ja'    => ['flag'=>'🇯🇵','name'=>'Japanese'],
+    'ko'    => ['flag'=>'🇰🇷','name'=>'Korean'],
+    'es'    => ['flag'=>'🇪🇸','name'=>'Spanish'],
+    'zh-TW' => ['flag'=>'🇹🇼','name'=>'Traditional Chinese'],
+    'vi'    => ['flag'=>'🇻🇳','name'=>'Vietnamese'],
+];
+@endphp
+
 @section('content')
 <div class="card p-4" style="max-width:780px">
   <form method="POST"
@@ -97,7 +108,37 @@
       </div>
     </div>
 
-    <div class="d-flex gap-2 pt-2 border-top">
+    <hr>
+    {{-- Translations --}}
+    <h5 class="mb-3">Translations</h5>
+    <ul class="nav nav-tabs mb-3" id="storyLangTabs">
+      @foreach($locales as $code => $lang)
+      <li class="nav-item">
+        <button class="nav-link {{ $loop->first ? 'active' : '' }}" type="button"
+                data-bs-toggle="tab" data-bs-target="#story-{{ str_replace('-','_',$code) }}">
+          {{ $lang['flag'] }} {{ $lang['name'] }}
+        </button>
+      </li>
+      @endforeach
+    </ul>
+    <div class="tab-content">
+      @foreach($locales as $code => $lang)
+      @php $t = ($story->translations ?? [])[$code] ?? []; $slug = str_replace('-','_',$code); @endphp
+      <div class="tab-pane fade {{ $loop->first ? 'show active' : '' }}" id="story-{{ $slug }}">
+        <div class="mb-3">
+          <label class="form-label fw-semibold">Title</label>
+          <input type="text" name="translations[{{ $code }}][title]" class="form-control"
+                 value="{{ old("translations.$code.title", $t['title'] ?? '') }}">
+        </div>
+        <div class="mb-3">
+          <label class="form-label fw-semibold">Description</label>
+          <textarea name="translations[{{ $code }}][description]" class="form-control" rows="5">{{ old("translations.$code.description", $t['description'] ?? '') }}</textarea>
+        </div>
+      </div>
+      @endforeach
+    </div>
+
+    <div class="d-flex gap-2 pt-3 border-top">
       <button class="btn btn-dark px-4">Save Story</button>
       <a href="{{ route('admin.about-stories.index') }}" class="btn btn-outline-secondary">Cancel</a>
     </div>

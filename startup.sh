@@ -17,7 +17,8 @@ chmod 644 /var/www/html/.env
 
 php artisan config:clear || true
 php artisan migrate --force || echo "[startup] migrate skipped"
-php artisan storage:link --force || true
+rm -rf /var/www/html/public/storage && ln -sfn /var/www/html/storage/app/public /var/www/html/public/storage
+chmod -R 755 /var/www/html/storage/app/public
 php artisan db:seed --force || echo "[startup] seed skipped"
 
 echo "Startup complete. Starting Apache on port $PORT..."

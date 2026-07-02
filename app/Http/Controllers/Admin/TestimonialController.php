@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 
 class TestimonialController extends Controller
 {
+    private array $locales = ['ja', 'ko', 'es', 'zh-TW', 'vi'];
+
     public function index()
     {
         $testimonials = Testimonial::orderBy('order')->get();
@@ -34,6 +36,7 @@ class TestimonialController extends Controller
             $data['author_photo'] = $request->file('author_photo')->store('uploads/testimonials', 'public');
         }
         $data['is_active'] = $request->boolean('is_active', true);
+        $data['translations'] = $this->mergeTranslations(new Testimonial(), $request);
         Testimonial::create($data);
         return redirect()->route('admin.testimonials.index')->with('success', 'Added!');
     }
@@ -58,6 +61,7 @@ class TestimonialController extends Controller
             $data['author_photo'] = $request->file('author_photo')->store('uploads/testimonials', 'public');
         } else { unset($data['author_photo']); }
         $data['is_active'] = $request->boolean('is_active', true);
+        $data['translations'] = $this->mergeTranslations($testimonial, $request);
         $testimonial->update($data);
         return redirect()->route('admin.testimonials.index')->with('success', 'Updated!');
     }
@@ -66,5 +70,17 @@ class TestimonialController extends Controller
     {
         $testimonial->delete();
         return back()->with('success', 'Deleted!');
+    }
+
+    private function mergeTranslations(Testimonial $testimonial, Request $request): array
+    {
+        $translations = $testimonial->translations ?? [];
+        foreach ($this->locales as $locale) {
+            $t = $request->input("translations.$locale", []);
+            if (array_filter($t)) {
+                $translations[$locale] = array_merge($translations[$locale] ?? [], array_filter($t));
+            }
+        }
+        return $translations;
     }
 }

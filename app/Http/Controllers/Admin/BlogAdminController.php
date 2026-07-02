@@ -9,6 +9,8 @@ use Illuminate\Support\Str;
 
 class BlogAdminController extends Controller
 {
+    private array $locales = ['ja', 'ko', 'es', 'zh-TW', 'vi'];
+
     public function index(Request $request)
     {
         $query = BlogPost::query();
@@ -32,11 +34,13 @@ class BlogAdminController extends Controller
             'read_time'        => 'nullable|string',
             'status'           => 'in:draft,published',
             'published_at'     => 'nullable|date',
+            'external_url'     => 'nullable|url',
             'meta_title'       => 'nullable|string',
             'meta_description' => 'nullable|string',
         ]);
         $data['slug'] = $data['slug'] ?? Str::slug($data['title']);
         if ($request->hasFile('featured_image')) $data['featured_image'] = $request->file('featured_image')->store('uploads/blog','public');
+        $data['translations'] = $this->mergeTranslations(new BlogPost(), $request);
         BlogPost::create($data);
         return redirect()->route('admin.blog.index')->with('success','Post created!');
     }
@@ -56,15 +60,29 @@ class BlogAdminController extends Controller
             'read_time'        => 'nullable|string',
             'status'           => 'in:draft,published',
             'published_at'     => 'nullable|date',
+            'external_url'     => 'nullable|url',
             'meta_title'       => 'nullable|string',
             'meta_description' => 'nullable|string',
         ]);
         $data['slug'] = $data['slug'] ?? Str::slug($data['title']);
         if ($request->hasFile('featured_image')) $data['featured_image'] = $request->file('featured_image')->store('uploads/blog','public');
         else unset($data['featured_image']);
+        $data['translations'] = $this->mergeTranslations($blog, $request);
         $blog->update($data);
         return redirect()->route('admin.blog.index')->with('success','Post updated!');
     }
 
     public function destroy(BlogPost $blog) { $blog->delete(); return back()->with('success','Deleted!'); }
+
+    private function mergeTranslations(BlogPost $post, Request $request): array
+    {
+        $translations = $post->translations ?? [];
+        foreach ($this->locales as $locale) {
+            $t = $request->input("translations.$locale", []);
+            if (array_filter($t)) {
+                $translations[$locale] = array_merge($translations[$locale] ?? [], array_filter($t));
+            }
+        }
+        return $translations;
+    }
 }
